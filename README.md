@@ -5,9 +5,41 @@ This repo is a minimal demo for image retrieval/loop closure detection. It is ba
 ## Prerequisites
 The code has been tested on MacOS(Apple silicon) with clang-1316.0.21.2.5. Ubuntu should also work.  You need to install the following libraries:
 ### OpenCV 3.4.16 with contrib modules
-We use [OpenCV](http://opencv.org/) to extract keypoints and descriptors. The [contrib modules](https://github.com/opencv/opencv_contrib) are required.
+We use [OpenCV](http://opencv.org/) to extract keypoints and descriptors. The [contrib modules](https://github.com/opencv/opencv_contrib) are required. Just follow the [official guide](https://docs.opencv.org/3.4.16/d7/d9f/tutorial_linux_install.html) to install OpenCV with contrib modules. 
+
+```
+Create a temporary directory, which we denote as <cmake_build_dir>, where you want to put the generated Makefiles, project files as well the object files and output binaries and enter there.
+
+For example
+
+cd ~/opencv
+mkdir build
+cd build
+Configuring. Run cmake [<some optional parameters>] <path to the OpenCV source directory>
+
+For example
+
+cmake -D CMAKE_BUILD_TYPE=Release -D CMAKE_INSTALL_PREFIX=/usr/local ..
+
+to build with modules from opencv_contrib set OPENCV_EXTRA_MODULES_PATH to <path to opencv_contrib/modules/>
+```
+
 ### DBoW3
+
 We use [DBoW3](https://github.com/rmsalinas/DBow3) to build the bag-of-words vocabulary, encode images and perform image retrieval.
+
+DBoW3 requires OpenCV only.  As described in official guide, we install DBoW3 as follow: 
+
+```
+git clone https://github.com/rmsalinas/DBow3.git
+
+cd DBow3
+mkdir build
+cd build/
+cmake ..
+make
+sudo make install
+```
 
 ## Build
 Clone the repository and use the build script to build the project.
