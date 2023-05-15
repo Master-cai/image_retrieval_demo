@@ -10,7 +10,6 @@ list(APPEND CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmake)
 
 # OpenCV
 # set(OpenCV_DIR "your/path/to/OpenCV")
-set(OpenCV_DIR "/opt/homebrew/Cellar/opencv@3/3.4.16_6/share/OpenCV")
 find_package(OpenCV REQUIRED)
 include_directories(${OpenCV_INCLUDE_DIRS})
 

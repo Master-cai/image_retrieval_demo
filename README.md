@@ -59,6 +59,8 @@ This program performs image retrieval based on a given vocabulary. It takes Two 
 query <vocabulary_file> <database_dir>
 ```
 ## data
-We provide a small vocabulary trained on 10 sequences of [KITTI](https://www.cvlibs.net/datasets/kitti/) dataset named `KITTI_voc.yml.gz` in `data/`. You can use it to test the program. There are also a large vocabulary `orbvoc.dbow3` provided by [DBoW3](https://github.com/rmsalinas/DBow3).
+We test the program on [KITTI](https://www.cvlibs.net/datasets/kitti/) dataset. The KITTI Vision Benchmark Suite is a repository of real-world data for autonomous driving created by Karlsruhe Institute of Technology and Toyota Technological Institute at Chicago. 
+
+We provide a small vocabulary trained on 10 sequences of KITTI dataset named `KITTI_voc.yml.gz` in `data/`. You can use it to test the program. There are also a large vocabulary `orbvoc.dbow3` provided by [DBoW3](https://github.com/rmsalinas/DBow3).
 
 We also use `one_hot_gen` to  transform the images in sequence 02 and 05 of KITTI dataset to one-hot encoding using the vocabulary `KITTI_voc.yml.gz`. The one-hot encoding images are saved in `data/02.txt` and `data/05.txt`. Each line in the text file is the image path and the one-hot encoding(10000 dimension) of the image.
